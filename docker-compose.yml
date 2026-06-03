@@ -13,9 +13,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/gymsys
       SPRING_DATASOURCE_USERNAME: admin
       SPRING_DATASOURCE_PASSWORD: admin
-      STORAGE_PATH: /app/storage
-    volumes:
-      - ./storage:/app/storage
 
   postgres:
     image: postgres:15
@@ -26,8 +23,6 @@ services:
       POSTGRES_PASSWORD: admin
     ports:
       - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
